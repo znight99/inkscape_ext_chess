@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Chess</_name>
+	<id>znight.chess</id>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<dependency type="executable" location="extensions">render_chess.py</dependency>
+	<param name="fen" type="string"  _gui-text="FEN:">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</param>
+	<param name="piecesize" type="int" min="1" max="256" _gui-text="Piece size:"/>
+	<param name="lightsquare" type="string" max_length="6" _gui-text="Light Square(RRGGBB hex):">c8c365</param>
+	<param name="darksquare" type="string" max_length="6" _gui-text="Dark Square(RRGGBB hex):">77a26d</param>
+	<param name="mono" type="boolean"  _gui-text="Mono:">true</param>
+	<param name="flip" type="boolean"  _gui-text="Flip:">false</param>
+	  
+
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Render">
+	  		<submenu _name="ChessBoard"/>
+			</submenu>
+		</effects-menu>
+	</effect>
+	<script>
+		<command reldir="extensions" interpreter="python">render_chess.py</command>
+	</script>
+</inkscape-extension>

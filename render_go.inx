@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Go</_name>
+	<id>znight.go</id>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<dependency type="executable" location="extensions">render_go.py</dependency>
+	<param name="kifu" type="string"  _gui-text="Kifu:">w d4 1 f3 g3 #A c6 e6 !MA e7 d7 !TR e9 d9 !CR e10 d8 !SQ d10 d5 0 d11 m #A d12 d13</param>
+  <param name="encoding-help" type="description">  w/b/m/r: choose color of pieces followed, or only a mark, or remove it
+  b10: coordinate of the pieces, a letter for X, and a number for Y
+  123/#xxx: the mark of pieces followed, may be a number, a letter or others, auto increasing
+  !sq/!cr/!ma/!tr: special mark
+  </param>
+  <param name="showcoord" type="boolean" _gui-text="Show coordinate:">false</param>
+ 	<param name="boardsize" type="int" min="9" max="25" _gui-text="Board size:"/>
+	<param name="piecesize" type="int" min="1" max="256" _gui-text="Piece size:"/>
+	<param name="boardcolor" type="string" max_length="6" _gui-text="Board color(RRGGBB hex):">c08000</param>
+	<param name="mono" type="boolean"  _gui-text="Mono:">true</param>
+	<param name="flip" type="boolean"  _gui-text="Flip:">false</param>
+	  
+
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Render">
+	  		<submenu _name="ChessBoard"/>
+			</submenu>
+		</effects-menu>
+	</effect>
+	<script>
+		<command reldir="extensions" interpreter="python">render_go.py</command>
+	</script>
+</inkscape-extension>

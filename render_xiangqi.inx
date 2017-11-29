@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+	<_name>Xinagqi</_name>
+	<id>znight.xiangqi</id>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<dependency type="executable" location="extensions">render_xiangqi.py</dependency>
+	<param name="fen" type="string"  _gui-text="FEN:">rheakaehr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RHEAKAEHR w 0 1</param>
+	<param name="piecesize" type="int" min="1" max="256" _gui-text="Piece size:"/>
+	<param name="boardcolor" type="string" max_length="6" _gui-text="Board Color(RRGGBB hex):">ffffc0</param>
+	<param name="mono" type="boolean"  _gui-text="Mono:">true</param>
+	<param name="flip" type="boolean"  _gui-text="Flip:">false</param>
+	  
+
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Render">
+	  		<submenu _name="ChessBoard"/>
+			</submenu>
+		</effects-menu>
+	</effect>
+	<script>
+		<command reldir="extensions" interpreter="python">render_xiangqi.py</command>
+	</script>
+</inkscape-extension>
