@@ -1,2 +1,2 @@
 
-Copy to inkscape\share\extensions directly.
+Copy src/* to inkscape\share\extensions directly.
